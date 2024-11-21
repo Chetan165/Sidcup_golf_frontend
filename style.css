@@ -1,0 +1,410 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#nav{
+    position: fixed;
+    padding-left: 140px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    height:150px;
+    width: 100%;
+    gap: 80px;
+    font-weight: 500;
+    z-index: 100;
+}
+#nav img{
+    width: 120px;
+}
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -10;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#page1{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+#arrow{
+    position: absolute;
+    left: 10px;
+    top: 70%;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    border: 5px solid #95c11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in-out; 
+}
+#arrow i{
+    font-size: 90px;  
+    transition: 0.5s ease-in-out;
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 10;
+}
+#page1 h1::before{
+    content: 'EAT.DRINK.PLAY.';
+    color: black;
+    position: absolute;
+    -webkit-text-stroke: #95c11e 3px;
+    z-index: -1;
+    transform: translateX(-5px) translateY(-5px);
+
+}
+#page1 h2{
+    font-weight: 600;
+    font-size: 30px;
+}
+#page1 h3{
+    width: 40%;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+}
+#cursor{
+    width: 30px;
+    height: 30px;
+    background-color: #95c11e;
+    z-index: 99;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+}
+#blur-cursor{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: #96c11e9e;
+    filter: blur(90px);
+    z-index: 1;
+    position: fixed;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 98;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 150px;
+    font-weight: 1000;
+    color: transparent;
+    margin-right: 20px;
+    -webkit-text-stroke: 2px #95c11e;
+    transition:all linear 0.3s;
+}
+.scroller-in{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear 0.5s;
+    animation-iteration-count: infinite;
+}
+#scroller:hover{
+    z-index: 99;
+}
+#scroller h4:hover{
+    color: #95c11e;
+    transform: scale(1.1);
+    margin-right:100px;
+    margin-left:100px
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+@keyframes scroll {
+    from{
+        transform:translateX(0%)
+    }
+    to{
+        transform: translateX(-100%)
+    }
+    
+}
+#img1{
+    margin-left: 10px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 30px;
+
+}
+#img2{
+    margin-right:10px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+#about-us{
+    z-index: 98;
+    top: 195px;
+    position: relative;
+    height: 310px;
+    display: flex;
+    justify-content: space-around;
+    padding-right:50px;
+    padding-left: 50px;
+}
+#about-container h2{
+    position: relative;
+    left: 100px;
+    font-size: 80px;
+    font-weight: 1000;
+}
+#about-container{
+    padding: 0px 15px 0px 15px;
+    width: 700px;
+    height: 300px;
+    border: solid 5px #95c11e;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+ #about-container h2::before{
+        position: absolute;
+        content:'ABOUT US';
+        color: #95c11e;
+        transform: translateX(-5px);
+        transition: 0.2s;
+        z-index: -1;
+    }
+#about-us:hover{
+    z-index: 99;
+    #about-container{
+        transition: 0.5s;
+    }
+    #about-container p{
+        text-decoration: underline;
+        transition: 0.2s;
+    }
+}
+#bg{
+    height: 200px;
+    width: 200px;
+    z-index: 8;
+    object-fit: cover;
+    position: relative;
+    top: 140px;
+    margin-left: 10px;
+}
+#about-container p{
+    line-height: 35px;
+    position: relative;
+    top: 20px;
+    font-size: 20px;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+    position: relative;
+}
+#cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:60vh;
+    width: 100%;
+    position: absolute;
+    
+}
+.card-in{
+    height: 50vh;
+    width: 48vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+#card1{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card1.avif);
+}
+#card2{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card2.webp);
+}
+#card3{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/refs/heads/main/Assests/card3.avif);
+}
+.overlay{
+    height: 100%;
+    padding-top: 100px;
+    background-color: #95c11e;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.overlay h3{
+    color: black;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+.overlay p{
+    color: black;
+}
+.overlay:hover{
+    z-index: 99;
+    opacity: 1;
+    i{
+        transition: 1s ease-in-out;
+        transform: rotate(360deg) scale(3);
+        
+    }
+}
+.card-in:hover{
+    transform: scale(1.1);
+}
+#banner{
+    position: absolute;
+    z-index: 98;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:linear-gradient(to left , rgb(62, 181, 7),#95c11e);
+    position: relative;
+    bottom: 200px;
+    transition: 0.5s;
+}
+#banner img{
+    height: 100%;
+    width: 16%;
+    object-fit: cover;
+}
+#banner h3{
+    transform: rotate(-3deg);
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-left: 40px;
+    color: black;
+    font-size: 80px;
+    font-weight: 1000;
+    height: 280px;
+}
+#para{
+    z-index: 98;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+#para p{
+    padding: 10px 300px 0px 300px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+
+}
+#para img{
+    position: absolute;
+    height: 60px;
+}
+#colon1{
+    left: 10%;
+    top: 10px;
+}
+#colon2{
+    right:15%;
+    bottom: 10px;
+}
+.overlay i{
+    position: absolute;
+    scale: 2;
+    color: black;
+    right: 30px;
+    top: 30px;
+}
+#page4{
+    background-color: black;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.elem{
+    height: 180px;
+    width: 350px;
+    background: linear-gradient(to bottom,green, #95c11e);
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 98;
+    display: flex;
+    justify-content: center;
+}
+.elem img{
+    height: 180px;
+    width: 350px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    object-fit: cover;
+}
+.elem h2{
+    position: absolute;
+    top: 48%;
+    color: black;
+    z-index: 98;
+    font-size: 30px;
+    transition: 1s;
+    
+}
+.elem:hover{
+    opacity: 0.6;
+}
+#page4>h1{
+    position: absolute;
+    font-size: 80px;
+    top: 40px;
+    color: black;
+    z-index: 98;
+    -webkit-text-stroke: 3px #95c11e;
+}
+#bg2{
+        height: 200px;
+        width: 200px;
+        z-index: 8;
+        object-fit: cover;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+}
+
